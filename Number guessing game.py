@@ -28,6 +28,7 @@ def guessing_game ():
         user_input = get_user_input()
         eval = evaluate_user_input(user_input, guessing_number)
         print(eval)
-                
+        if eval == 'you have the rigth number , the number is {user_input}' :
+            break     
 guessing_game ()
 
