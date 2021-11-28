@@ -10,6 +10,7 @@ def guessing_game ():
         user_input = int(input('Whats your number?'))
         return user_input
 
+
     def evaluate_user_input(user_input, guessing_number) : 
         
         if user_input > guessing_number: 
@@ -22,7 +23,6 @@ def guessing_game ():
             return (f'you have the rigth number , the number is {user_input}') 
 
 
-
     while True :
         
         user_input = get_user_input()
@@ -30,5 +30,7 @@ def guessing_game ():
         print(eval)
         if eval == 'you have the rigth number , the number is {user_input}' :
             break     
+
+
 guessing_game ()
 
