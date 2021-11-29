@@ -10,7 +10,7 @@ def run_timing():
         
         user_input = input('Enter 10 km run time: ')
 
-        if user_input == '' :
+        if not user_input  :
             print(calc_mean(counter, time_for_run))
             break
 
