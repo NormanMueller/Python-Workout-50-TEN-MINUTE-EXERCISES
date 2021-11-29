@@ -10,14 +10,15 @@ def run_timing():
         
         user_input = input('Enter 10 km run time: ')
 
-        if user_input == '' :
+        if not user_input  :
             print(calc_mean(counter, time_for_run))
             break
 
         try :
             time_for_run  += int(user_input)
             counter +=1 
-        except :
-            pass
+        except ValueError as e:
+            print('Hey! That's not a valid number!')
 
 run_timing()
+
