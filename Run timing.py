@@ -17,7 +17,7 @@ def run_timing():
         try :
             time_for_run  += int(user_input)
             counter +=1 
-        except :
-            pass
+        except ValueError as e:
+            print('Hey! That's not a valid number!')
 
 run_timing()
