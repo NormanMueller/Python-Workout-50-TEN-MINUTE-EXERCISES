@@ -21,3 +21,4 @@ def run_timing():
             print('Hey! That's not a valid number!')
 
 run_timing()
+

@@ -1,7 +1,8 @@
 def my_sum(*args) :
-
+ 
     ret_val = 0
     skipped = []
+    
 
     def list_add(argument , ret_val ,skipped) :
         
@@ -21,6 +22,7 @@ def my_sum(*args) :
             skipped.append(argument)
         return ret_val ,skipped 
     
+
     for argument in args :
         
         if isinstance(argument, list) == True :
