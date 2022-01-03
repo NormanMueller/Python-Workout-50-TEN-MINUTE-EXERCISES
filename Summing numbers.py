@@ -3,6 +3,9 @@ def my_sum(*args) :
     sum_overall = 0
     skipped_argument = []
     
+    def check_if_is_list (argument):
+        return isinstance(argument, list)
+
     def add_single_entry(argument , sum_overall ,skipped_argument):
         
         try: 
@@ -23,10 +26,10 @@ def my_sum(*args) :
 
     for argument in args :
         
-        if isinstance(argument, int) == True :
-            sum_overall, skipped_argument = add_single_entry(argument, sum_overall, skipped_argument)
+        if  check_if_is_list (argument) == True :
+            sum_overall, skipped_argument = add_list_entry(argument, sum_overall, skipped_argument)
         else :    
-            sum_overall, skipped_argument = add_list_entry(argument, sum_overall, skipped_argument) 
+            sum_overall, skipped_argument = add_single_entry(argument, sum_overall, skipped_argument) 
     
     return f'Your sum is: {sum_overall} we cant eval: {skipped_argument}'
 
