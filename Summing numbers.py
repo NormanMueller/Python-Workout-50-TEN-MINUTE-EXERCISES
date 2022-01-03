@@ -3,32 +3,30 @@ def my_sum(*args) :
     ret_val = 0
     skipped = []
     
-
-    def list_add(argument , ret_val ,skipped) :
-        
-        for list_entry in argument : 
-            try:
-                ret_val += list_entry
-            except:
-                skipped.append(list_entry) 
-        return ret_val ,skipped
-
-
-    def int_add(argument , ret_val ,skipped):
+    def add_single_entry(argument , ret_val ,skipped):
         
         try: 
             ret_val += argument
         except:
             skipped.append(argument)
+
         return ret_val ,skipped 
+
     
+    def add_list_entry(argument , ret_val ,skipped) :
+        
+        for list_entry in argument : 
+             ret_val ,skipped = add_single_entry(list_entry,ret_val ,skipped)
+
+        return ret_val ,skipped
+        
 
     for argument in args :
         
-        if isinstance(argument, list) == True :
-            ret_val, skipped = list_add(argument, ret_val, skipped) 
+        if isinstance(argument, int) == True :
+            ret_val, skipped = add_single_entry(argument, ret_val, skipped)
         else :    
-            ret_val, skipped =int_add(argument, ret_val, skipped)
+            ret_val, skipped = add_list_entry(argument, ret_val, skipped) 
     
     return f'Your sum is: {ret_val} we cant eval: {skipped}'
 
