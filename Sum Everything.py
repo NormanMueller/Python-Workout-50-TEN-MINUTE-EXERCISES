@@ -6,11 +6,9 @@ def sum_everything (*args):
     types_count = collections.Counter(types) 
     output = args[0]
     if len(types_count) ==1 and args is not None:
-        for element in args[1:]: 
+        for element in args[1:]: g
             output += element
-    return output
-    
-
+    return output 
 
 
 sum_everything('a','a')
