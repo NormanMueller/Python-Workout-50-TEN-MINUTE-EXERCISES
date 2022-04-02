@@ -5,7 +5,7 @@ def my_sum(*args) :
     
     def check_if_is_list (argument):
         return isinstance(argument, list)
-
+    
     def add_single_entry(argument , sum_overall ,skipped_argument):
         
         try: 
